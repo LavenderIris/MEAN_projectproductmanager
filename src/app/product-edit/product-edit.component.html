@@ -1,0 +1,12 @@
+<h1>Edit your product</h1>
+
+<form (submit)='onSubmit()' #formData='ngForm'>
+  Title: <input type="text" name='name' value='{{product.name}}' [(ngModel)]='product.name'  required minlength='4'><br>
+  Price: <input type="text" name='price' value='{{product.price}}' [(ngModel)]='product.price' required><br>
+  Image URL: <input class='img_text' type="text" name='link' value='{{product.link}}' [(ngModel)]='product.link'><br>
+  <input type='hidden' [(ngModel)]='product.id' name='id' value='{{product.id}}'>
+  <input [disabled]='!formData.valid' type="submit" value='Submit Edit Changes'>
+</form>
+
+
+<button (click)='deleteProduct(idx)'>Delete</button>
